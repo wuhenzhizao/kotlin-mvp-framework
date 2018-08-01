@@ -50,6 +50,8 @@ ext {
             "fresco_drawee"                       : "com.facebook.fresco:drawee:1.10.0",
             "fresco_fbcore"                       : "com.facebook.fresco:fbcore:1.10.0",
             "fresco_animated_gif"                 : "com.facebook.fresco:animated-gif:1.10.0",
+            "glide"                               : "com.github.bumptech.glide:glide:4.7.1",
+            "glide_compiler"                      : "com.github.bumptech.glide:compiler:4.7.1",
             "retrofit"                            : "com.squareup.retrofit2:retrofit:2.4.0",
             "retrofit_gson"                       : "com.squareup.retrofit2:converter-gson:2.4.0",
             "retrofit_rxjava"                     : "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0",

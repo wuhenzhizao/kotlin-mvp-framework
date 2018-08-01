@@ -3,8 +3,8 @@ package com.wuhenzhizao.mvp.app
 import android.os.Bundle
 import com.wuhenzhizao.base.BaseActivity
 
-class MainActivity : BaseActivity(), MainView {
-    private lateinit var presenter: MainPresenter
+class MainActivity : BaseActivity(), MainContract.View {
+    private lateinit var presenter: MainContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -13,5 +13,9 @@ class MainActivity : BaseActivity(), MainView {
         presenter = MainPresenter(this)
         presenter.getData()
         addPresenter(presenter)
+    }
+
+    override fun setTitle(title: String) {
+
     }
 }

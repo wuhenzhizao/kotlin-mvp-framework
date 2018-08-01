@@ -4,14 +4,13 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity
-import com.wuhenzhizao.mvp.BasePresenter
 import com.wuhenzhizao.mvp.IBasePresenter
 import com.wuhenzhizao.mvp.IBaseView
 
 abstract class BaseActivity : RxAppCompatActivity(), IBaseView {
     private val presenterList: MutableList<IBasePresenter> = arrayListOf()
 
-    protected fun addPresenter(p: BasePresenter<*>) {
+    protected fun addPresenter(p: IBasePresenter) {
         if (presenterList.contains(p)) {
             presenterList.remove(p)
         }
@@ -42,7 +41,6 @@ abstract class BaseActivity : RxAppCompatActivity(), IBaseView {
     }
 
     override fun startActivity(clazz: Class<Activity>, args: Bundle) {
-
     }
 
     override fun startActivityForResult(clazz: Class<Activity>, requestCode: Int, args: Bundle) {
