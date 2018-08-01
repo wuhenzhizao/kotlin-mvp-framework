@@ -2,6 +2,8 @@ package com.wuhenzhizao.base
 
 import android.support.multidex.MultiDexApplication
 import com.squareup.leakcanary.LeakCanary
+import com.wuhenzhizao.module.ModuleManager
+import com.wuhenzhizao.mvp.ModelManager
 
 abstract class BaseApplication : MultiDexApplication() {
 
@@ -13,5 +15,9 @@ abstract class BaseApplication : MultiDexApplication() {
         LeakCanary.install(this)
     }
 
-
+    override fun onTerminate() {
+        ModelManager.clear()
+        ModuleManager.clear()
+        super.onTerminate()
+    }
 }

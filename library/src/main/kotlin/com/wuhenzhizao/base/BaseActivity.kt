@@ -1,6 +1,7 @@
 package com.wuhenzhizao.base
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity
 import com.wuhenzhizao.mvp.BasePresenter

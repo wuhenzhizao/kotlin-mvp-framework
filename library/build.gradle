@@ -30,14 +30,13 @@ dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
 
     api rootProject.ext.dependencies["kotlin"]
+    api rootProject.ext.dependencies["kotlin-reflect"]
     api rootProject.ext.dependencies["appcompat"]
     androidTestApi(rootProject.ext.dependencies["espresso"], {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
     api rootProject.ext.dependencies["dagger"]
     kapt rootProject.ext.dependencies["dagger_processor"]
-
     api rootProject.ext.dependencies["retrofit"]
     api rootProject.ext.dependencies["retrofit_gson"]
     api rootProject.ext.dependencies["retrofit_rxjava"]
@@ -46,10 +45,13 @@ dependencies {
     api rootProject.ext.dependencies["rxjava"]
     api rootProject.ext.dependencies["rxandroid"]
     api rootProject.ext.dependencies["rxPermissions"]
+    api (rootProject.ext.dependencies["rxbus"]) {
+        exclude group: 'com.jakewharton.timber', module: 'timber'
+    }
     api rootProject.ext.dependencies["rxlifecycle-components"]
     api rootProject.ext.dependencies["rxlifecycle-kotlin"]
     api rootProject.ext.dependencies["rxlifecycle-android-lifecycle-kotlin"]
-
+    api rootProject.ext.dependencies["timber"]
     debugApi rootProject.ext.dependencies["leakcanary-android"]
     debugApi rootProject.ext.dependencies["leakcanary-support-fragment"]
     releaseApi rootProject.ext.dependencies["leakcanary-android-no-op"]

@@ -39,6 +39,7 @@ ext {
 
     dependencies = [
             "kotlin"                              : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            "kotlin-reflect"                      : "org.jetbrains.kotlin:kotlin-reflect:1.2.51",
             "appcompat"                           : "com.android.support:appcompat-v7:28.0.0-beta01",
             "multidex"                            : "com.android.support:multidex:1.0.1",
             "espresso"                            : "com.android.support.test.espresso:espresso-core:3.0.2",
@@ -62,6 +63,7 @@ ext {
             "rxlifecycle-kotlin"                  : "com.trello.rxlifecycle2:rxlifecycle-kotlin:2.2.2",
             "rxlifecycle-android-lifecycle-kotlin": "com.trello.rxlifecycle2:rxlifecycle-android-lifecycle-kotlin:2.2.2",
             "rxPermissions"                       : "com.github.tbruyelle:rxpermissions:0.10.2",
+            "rxbus"                               : "com.hwangjr.rxbus:rxbus:1.0.6",
             "timber"                              : "com.jakewharton.timber:timber:4.7.1",
             "leakcanary-android"                  : "com.squareup.leakcanary:leakcanary-android:1.6.1",
             "leakcanary-android-no-op"            : "com.squareup.leakcanary:leakcanary-android-no-op:1.6.1",
