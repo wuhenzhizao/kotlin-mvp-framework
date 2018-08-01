@@ -1,4 +1,4 @@
 package com.wuhenzhizao.mvp
 
-abstract class BaseModel {
+abstract class BaseModel : IBaseModel {
 }

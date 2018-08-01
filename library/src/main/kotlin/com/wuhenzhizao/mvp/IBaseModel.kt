@@ -1,6 +1,6 @@
 package com.wuhenzhizao.mvp
 
-interface IModel {
+interface IBaseModel {
 
     fun destory()
 }

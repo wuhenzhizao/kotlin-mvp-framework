@@ -1,19 +1,29 @@
 package com.wuhenzhizao.mvp
 
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
 
 abstract class BasePresenter<V : IBaseView>(var view: V) : IBasePresenter {
-    private lateinit var disposable: CompositeDisposable
+    private lateinit var compositeDisposable: CompositeDisposable
 
     init {
         subscribe()
     }
 
     final override fun subscribe() {
-        disposable = CompositeDisposable()
+        compositeDisposable = CompositeDisposable()
+
     }
 
     final override fun unsubscribe() {
-        disposable.clear()
+        compositeDisposable.clear()
+    }
+
+    fun addDisposable(disposable: Disposable) {
+        compositeDisposable.add(disposable)
+    }
+
+    override fun <M : IBaseModel> obtainModel(clazz: Class<M>): M? {
+        return null
     }
 }
