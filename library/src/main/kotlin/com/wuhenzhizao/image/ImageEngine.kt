@@ -11,4 +11,11 @@ interface ImageEngine {
     fun into()
 
     fun placeHolder(resourceId: Int)
+
+    // 占位图
+    // 圆角
+    // 切图服务
+    // ScaleType
+    // 缩略图
+    //
 }
