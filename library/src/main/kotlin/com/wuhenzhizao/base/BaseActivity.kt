@@ -41,18 +41,6 @@ abstract class BaseActivity : RxAppCompatActivity(), IBaseView {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
-    override fun startActivity(clazz: Class<Activity>, args: Bundle) {
-        val intent = Intent(this, clazz)
-        intent.putExtra("params", args)
-        super.startActivity(intent)
-    }
-
-    override fun startActivityForResult(clazz: Class<Activity>, requestCode: Int, args: Bundle) {
-        val intent = Intent(this, clazz)
-        intent.putExtra("params", args)
-        super.startActivityForResult(intent,requestCode)
-    }
-
     override fun showSoftInputKeyBoard() {
 
     }
