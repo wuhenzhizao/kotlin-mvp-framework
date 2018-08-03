@@ -1,6 +1,7 @@
 package com.wuhenzhizao.mvp
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 
 interface IBaseView {
@@ -25,12 +26,12 @@ interface IBaseView {
     /**
      * 启动Activity
      */
-    fun startActivity(clazz: Class<Activity>, args: Bundle)
+    fun startActivity(intent:Intent)
 
     /**
      * 启动Activity
      */
-    fun startActivityForResult(clazz: Class<Activity>, requestCode: Int, args: Bundle)
+    fun startActivityForResult(intent:Intent, requestCode: Int)
 
     /**
      * 显示键盘
