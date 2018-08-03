@@ -3,8 +3,8 @@ package com.wuhenzhizao.mvp.app
 import android.os.Bundle
 import com.wuhenzhizao.base.BaseActivity
 
-class MainActivity : BaseActivity(), MainContract.View {
-    private lateinit var presenter: MainContract.Presenter
+class MainActivity : BaseActivity(), MainContract.MainView {
+    private lateinit var presenter: MainContract.MainPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

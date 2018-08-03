@@ -1,15 +1,19 @@
 package com.wuhenzhizao.mvp.app
 
+import com.wuhenzhizao.mvp.BasePresenter
 import com.wuhenzhizao.mvp.IBasePresenter
 import com.wuhenzhizao.mvp.IBaseView
 
 interface MainContract {
 
-    interface View : IBaseView {
+    interface MainView : IBaseView {
         fun setTitle(title: String)
     }
 
-    interface Presenter : IBasePresenter {
-        fun getData()
+
+    abstract class MainPresenter(view:MainView) : BasePresenter<MainView>(view) {
+        open fun getData(){
+
+        }
     }
 }

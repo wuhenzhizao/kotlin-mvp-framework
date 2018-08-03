@@ -12,6 +12,12 @@ interface ImageEngine {
 
     fun placeHolder(resourceId: Int)
 
+    fun thumbnail(url:String)
+
+    fun corner(value:Float)
+
+    fun resize(width:Float,height:Float)
+
     // 占位图
     // 圆角
     // 切图服务
