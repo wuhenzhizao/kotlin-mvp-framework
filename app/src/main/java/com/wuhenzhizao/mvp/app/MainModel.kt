@@ -1,5 +1,6 @@
 package com.wuhenzhizao.mvp.app
 
+import com.gome.common.net.ServiceFactory
 import com.wuhenzhizao.http.BaseResponse
 import com.wuhenzhizao.http.HttpException
 import com.wuhenzhizao.http.ResponseConsumer
@@ -40,7 +41,7 @@ class MainModel : BaseModel() {
     }
 
         fun getList(callback: Callback<String>): Disposable {
-            val observable = Observable.just(BaseResponse(200,"","返回数据"))
+            val observable = ServiceFactory.getService(ApiServcie::class.java).request("test11","test11")
             return subscribe(observable, callback)
     }
 }

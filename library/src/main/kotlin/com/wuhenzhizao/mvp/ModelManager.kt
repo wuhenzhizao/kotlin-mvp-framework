@@ -12,7 +12,7 @@ object ModelManager {
         if (modelRefMap.containsKey(clazz)) {
             val modelRef: SoftReference<IBaseModel> = modelRefMap[clazz] as SoftReference<IBaseModel>
             modelRef.apply {
-                if (!modelRef.isEnqueued) {
+                if (!modelRef.isEnqueued&& modelRef.get() != null) {
                     return modelRef.get() as M
                 } else {
                     modelRefMap.remove(clazz)
