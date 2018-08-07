@@ -18,25 +18,4 @@ interface ImageEngine {
      * 资源释放，app结束时候会调用
      */
     fun release()
-
-//    fun with(context: Context)
-//
-//    fun load(url: String)
-//
-//    fun into()
-//
-//    fun placeHolder(resourceId: Int)
-//
-//    fun thumbnail(url:String)
-//
-//    fun corner(value:Float)
-//
-//    fun resize(width:Float,height:Float)
-
-    // 占位图
-    // 圆角
-    // 切图服务
-    // ScaleType
-    // 缩略图
-    //
 }

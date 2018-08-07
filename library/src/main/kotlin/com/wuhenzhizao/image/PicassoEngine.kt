@@ -4,6 +4,7 @@ import android.content.Context
 import android.widget.ImageView
 
 class PicassoEngine : ImageEngine {
+
     override fun initConfig(context: Context) {
     }
 

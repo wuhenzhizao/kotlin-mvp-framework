@@ -1,4 +1,4 @@
-package com.gome.common.net.intercepter
+package com.wuhenzhizao.http.intercepter
 
 import android.content.Context
 import android.text.TextUtils
@@ -14,8 +14,8 @@ internal class HeaderParamsIntercepter(context: Context) : BaseIntercepter(conte
     override fun intercept(chain: Interceptor.Chain?): Response {
         val builder = chain!!.request().newBuilder()
         builder.header("Content-Type", "application/json;charset=utf-8")
-//        builder.header("X-Gomeplus-User-Id", PreferenceUtils.getString(GConstants.USER_ID, ""))
-//        builder.header("X-Gomeplus-Login-Token", PreferenceUtils.getString(GConstants.LOGIN_TOKEN, ""))
+//        builder.header("User-Id", PreferenceUtils.getString(GConstants.USER_ID, ""))
+//        builder.header("Login-Token", PreferenceUtils.getString(GConstants.LOGIN_TOKEN, ""))
         builder.header("X-Gomeplus-Trace-Id", UUID.randomUUID().toString())
 
         val paramsBuilder = StringBuilder()

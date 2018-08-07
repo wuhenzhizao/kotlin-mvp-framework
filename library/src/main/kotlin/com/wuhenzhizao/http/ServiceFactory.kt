@@ -1,4 +1,4 @@
-package com.gome.common.net
+package com.wuhenzhizao.http
 
 import android.content.Context
 import com.google.gson.Gson
@@ -12,13 +12,13 @@ import java.lang.ref.WeakReference
  * Created by liufei on 2017/10/11.
  */
 object ServiceFactory {
-    private const val BASE_URL = ""
+    private const val BASE_URL = "https://www.baidu.com"
     private lateinit var context: WeakReference<Context>
     private lateinit var retrofit: Retrofit
     private lateinit var fileRetrofit: Retrofit
 
-    fun init(context: Context?) {
-        this.context = WeakReference(context!!.applicationContext)
+    fun init(context: Context) {
+        ServiceFactory.context = WeakReference(context.applicationContext)
 
         val builder = getRetrofitBuilder()
         builder.baseUrl(BASE_URL)

@@ -1,12 +1,7 @@
-package com.gome.common.net.intercepter
+package com.wuhenzhizao.http.intercepter
 
 import android.content.Context
-import android.os.Build
-import android.text.TextUtils
-import com.gome.common.utils.TimeUtils
-import com.wuhenzhizao.utils.TelephoneUtils
 import okhttp3.Interceptor
-import java.util.*
 
 /**
  * Created by liufei on 2017/10/11.
@@ -36,7 +31,7 @@ abstract class BaseIntercepter : Interceptor {
 //            publicParamList.add(PublicParam("X-Gomeplus-Device", device.toString()))
 //
 //            // {AppId}/{From}
-//            // AppId	美信iOS: 001 美信Android: 002 美信Wap: 003 H5：004 PC：005
+//            // AppId	iOS: 001 Android: 002 Wap: 003 H5：004 PC：005
 //            var channelId = TelephoneUtils.getMetaData(context, "FROM")
 //            channelId = channelId.substring(1, channelId.length - 1)
 //            val app = StringBuilder()

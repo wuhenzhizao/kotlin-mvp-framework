@@ -1,16 +1,12 @@
 package com.wuhenzhizao.mvp.app
 
-import com.gome.common.net.ServiceFactory
+import com.wuhenzhizao.http.ServiceFactory
 import com.wuhenzhizao.http.BaseResponse
 import com.wuhenzhizao.http.HttpException
-import com.wuhenzhizao.http.ResponseConsumer
 import com.wuhenzhizao.module.Callback
 import com.wuhenzhizao.mvp.BaseModel
 import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
-import io.reactivex.schedulers.Schedulers
-import java.util.function.Function
 
 class MainModel : BaseModel() {
 

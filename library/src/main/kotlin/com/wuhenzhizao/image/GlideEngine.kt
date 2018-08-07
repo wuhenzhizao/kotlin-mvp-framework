@@ -17,7 +17,6 @@ class GlideEngine : ImageEngine {
 
     }
 
-
     override fun load(context: Context, url: String, view: ImageView, options: Options) {
         val glideOptions = RequestOptions()
         //处理占位图
@@ -27,8 +26,6 @@ class GlideEngine : ImageEngine {
         if(options.imageInfo!=null){
             glideOptions.override(options.imageInfo!!.width, options.imageInfo!!.height)
         }
-        //处理scaleType   Glide会根据ImageView的ScaleType来自动出来
-//        setScaleType(glideOptions, options.scaleType)
         val requestBuilder: RequestBuilder<Bitmap> = Glide.with(context).asBitmap().load(url).apply(glideOptions)
         //处理缩略图
         if (!TextUtils.isEmpty(options.thumbnail)) {
@@ -50,23 +47,4 @@ class GlideEngine : ImageEngine {
     override fun release() {
 
     }
-
-//    private fun setScaleType(requestOptions: RequestOptions, scaleType: ImageView.ScaleType) {
-//        when (scaleType) {
-//            ImageView.ScaleType.CENTER_CROP -> {
-//                requestOptions.centerCrop()
-//            }
-//            ImageView.ScaleType.CENTER_INSIDE -> {
-//                requestOptions.centerInside()
-//            }
-//            ImageView.ScaleType.FIT_CENTER -> {
-//                requestOptions.fitCenter()
-//            }
-//            else -> {
-//                requestOptions.centerCrop()
-//            }
-//        }
-//    }
-
-
 }

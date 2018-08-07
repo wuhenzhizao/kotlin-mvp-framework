@@ -2,10 +2,10 @@ package com.wuhenzhizao.image
 
 import android.content.Context
 import android.widget.ImageView
-import java.lang.ref.WeakReference
 
 object ImageLoader {
     private lateinit var engine: ImageEngine
+
     /**
      *ImageLoader初始化
      */
@@ -17,8 +17,15 @@ object ImageLoader {
     /**
      * 释放资源
      */
-    fun release(){
+    fun release() {
         engine.release()
+    }
+
+    /**
+     * 获取builder对象
+     */
+    fun with(context: Context): Builder {
+        return Builder(context)
     }
 
     private fun initEngine(engineType: EngineType) {
@@ -37,27 +44,17 @@ object ImageLoader {
         }
     }
 
-    /**
-     * 获取builder对象
-     */
-    fun with(context: Context): Builder {
-        return Builder(context)
-    }
-
     private fun display(context: Context, url: String, view: ImageView, options: Options) {
         engine.load(context, url, view, options)
     }
-
 
     enum class EngineType(val key: String, val engineType: Class<out ImageEngine>) {
         Glide("glide", GlideEngine::class.java),
         Fresco("fresco", FrescoEngine::class.java),
         Picasso("picasso", PicassoEngine::class.java),
-
     }
 
-    open class Builder(context: Context) {
-        private var wrContext: WeakReference<Context> = WeakReference(context)
+    open class Builder(private var context: Context) {
         private val options: Options = Options()
         private lateinit var url: String
         fun load(url: String): Builder {
@@ -66,7 +63,7 @@ object ImageLoader {
         }
 
         fun into(view: ImageView) {
-            display(wrContext.get()!!, url, view, options)
+            display(context, url, view, options)
         }
 
         fun placeHolder(resourceId: Int): Builder {

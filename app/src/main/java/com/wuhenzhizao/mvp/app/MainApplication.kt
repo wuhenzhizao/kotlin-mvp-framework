@@ -1,6 +1,6 @@
 package com.wuhenzhizao.mvp.app
 
-import com.gome.common.net.ServiceFactory
+import com.wuhenzhizao.http.ServiceFactory
 import com.wuhenzhizao.base.BaseApplication
 import com.wuhenzhizao.image.ImageLoader
 import com.wuhenzhizao.module.ModuleManager
