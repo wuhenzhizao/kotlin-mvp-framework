@@ -7,13 +7,16 @@ import java.lang.ref.WeakReference
 object ImageLoader {
     private lateinit var engine: ImageEngine
     /**
-     *Imageloader初始化
+     *ImageLoader初始化
      */
     fun init(engineType: EngineType, context: Context) {
         initEngine(engineType)
         engine.initConfig(context.applicationContext)
     }
 
+    /**
+     * 释放资源
+     */
     fun release(){
         engine.release()
     }
@@ -34,6 +37,9 @@ object ImageLoader {
         }
     }
 
+    /**
+     * 获取builder对象
+     */
     fun with(context: Context): Builder {
         return Builder(context)
     }

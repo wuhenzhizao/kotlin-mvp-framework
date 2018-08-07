@@ -6,6 +6,7 @@ import android.text.TextUtils
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestBuilder
+import com.bumptech.glide.load.DecodeFormat
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.wuhenzhizao.image.glide.CircularBitmapImageViewTarget
@@ -16,16 +17,18 @@ class GlideEngine : ImageEngine {
 
     }
 
+
     override fun load(context: Context, url: String, view: ImageView, options: Options) {
         val glideOptions = RequestOptions()
-        //处理展位图
+        //处理占位图
         glideOptions.placeholder(options.placeHolder)
         glideOptions.diskCacheStrategy(DiskCacheStrategy.ALL)
+        glideOptions.format(DecodeFormat.PREFER_ARGB_8888)
         if(options.imageInfo!=null){
             glideOptions.override(options.imageInfo!!.width, options.imageInfo!!.height)
         }
-        //处理scaleType
-        setScaleType(glideOptions, options.scaleType)
+        //处理scaleType   Glide会根据ImageView的ScaleType来自动出来
+//        setScaleType(glideOptions, options.scaleType)
         val requestBuilder: RequestBuilder<Bitmap> = Glide.with(context).asBitmap().load(url).apply(glideOptions)
         //处理缩略图
         if (!TextUtils.isEmpty(options.thumbnail)) {
@@ -48,22 +51,22 @@ class GlideEngine : ImageEngine {
 
     }
 
-    private fun setScaleType(requestOptions: RequestOptions, scaleType: ImageView.ScaleType) {
-        when (scaleType) {
-            ImageView.ScaleType.CENTER_CROP -> {
-                requestOptions.centerCrop()
-            }
-            ImageView.ScaleType.CENTER_INSIDE -> {
-                requestOptions.centerInside()
-            }
-            ImageView.ScaleType.FIT_CENTER -> {
-                requestOptions.fitCenter()
-            }
-            else -> {
-                requestOptions.centerCrop()
-            }
-        }
-    }
+//    private fun setScaleType(requestOptions: RequestOptions, scaleType: ImageView.ScaleType) {
+//        when (scaleType) {
+//            ImageView.ScaleType.CENTER_CROP -> {
+//                requestOptions.centerCrop()
+//            }
+//            ImageView.ScaleType.CENTER_INSIDE -> {
+//                requestOptions.centerInside()
+//            }
+//            ImageView.ScaleType.FIT_CENTER -> {
+//                requestOptions.fitCenter()
+//            }
+//            else -> {
+//                requestOptions.centerCrop()
+//            }
+//        }
+//    }
 
 
 }

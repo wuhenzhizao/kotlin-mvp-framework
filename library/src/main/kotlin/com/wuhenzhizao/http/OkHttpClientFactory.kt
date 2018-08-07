@@ -1,12 +1,12 @@
 package com.gome.common.net
 
 import android.content.Context
-import android.util.Log
 import com.gome.common.net.intercepter.HeaderFileParamsIntercepter
 import com.gome.common.net.intercepter.HeaderParamsIntercepter
 import com.wuhenzhizao.mvp.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import timber.log.Timber
 
 /**
  * Created by liufei on 2017/10/11.
@@ -52,7 +52,7 @@ object OkHttpClientFactory {
         override fun buildOkHttpClient(context: Context, builder: OkHttpClient.Builder) {
             if (BuildConfig.DEBUG) {
                 builder.addInterceptor(HttpLoggingInterceptor(HttpLoggingInterceptor.Logger { message ->
-                    Log.d("http",message)
+                    Timber.d(message)
                 }).setLevel(HttpLoggingInterceptor.Level.BODY))
             }
             factory.buildOkHttpClient(context, builder)

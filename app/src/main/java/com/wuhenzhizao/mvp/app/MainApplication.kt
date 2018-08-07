@@ -12,7 +12,7 @@ class MainApplication : BaseApplication() {
 
         ModuleManager.register(AppModule::class)
         ServiceFactory.init(this)
-        ImageLoader.init(ImageLoader.EngineType.Glide,this)
+        ImageLoader.init(ImageLoader.EngineType.Glide, this)
     }
 
 
