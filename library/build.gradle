@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -24,6 +25,11 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
+
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 dependencies {
@@ -32,6 +38,7 @@ dependencies {
     api rootProject.ext.dependencies["kotlin"]
     api rootProject.ext.dependencies["kotlin-reflect"]
     api rootProject.ext.dependencies["appcompat"]
+    testApi rootProject.ext.dependencies["junit"]
     androidTestApi(rootProject.ext.dependencies["espresso"], {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -57,4 +64,13 @@ dependencies {
     debugApi rootProject.ext.dependencies["leakcanary-android"]
     debugApi rootProject.ext.dependencies["leakcanary-support-fragment"]
     releaseApi rootProject.ext.dependencies["leakcanary-android-no-op"]
+}
+
+publish {
+    userOrg = 'wuhenzhizao'
+    groupId = 'com.wuhenzhizao'
+    artifactId = 'kotlin-mvp-framework'
+    publishVersion = '1.0.0'
+    desc = 'Android mvp architecture in kotlin'
+    website = 'https://github.com/wuhenzhizao/kotlin-mvp-framework'
 }
