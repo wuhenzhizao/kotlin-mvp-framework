@@ -42,4 +42,9 @@ interface IBaseView {
      * 隐藏键盘
      */
     fun hideSoftInputKeyBoard()
+
+    /**
+     * 关闭当前页面
+     */
+    fun finish()
 }
