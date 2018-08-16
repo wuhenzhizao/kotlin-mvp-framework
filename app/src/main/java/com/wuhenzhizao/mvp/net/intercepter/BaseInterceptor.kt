@@ -1,4 +1,4 @@
-package com.wuhenzhizao.http
+package com.wuhenzhizao.mvp.net.intercepter
 
 import android.content.Context
 import okhttp3.Interceptor
@@ -8,7 +8,7 @@ import okhttp3.Interceptor
  */
 class PublicParam(val key: String, val value: String)
 
-abstract class BaseIntercepter : Interceptor {
+abstract class BaseInterceptor : Interceptor {
     protected val publicParamList: MutableList<PublicParam> = arrayListOf()
     protected var context: Context? = null
 

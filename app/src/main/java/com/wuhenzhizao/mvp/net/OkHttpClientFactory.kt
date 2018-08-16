@@ -1,8 +1,8 @@
 package com.wuhenzhizao.mvp.net
 
 import android.content.Context
-import com.wuhenzhizao.mvp.net.intercepter.HeaderFileParamsIntercepter
-import com.wuhenzhizao.mvp.net.intercepter.HeaderParamsIntercepter
+import com.wuhenzhizao.mvp.net.intercepter.HeaderFileParamsInterceptor
+import com.wuhenzhizao.mvp.net.intercepter.HeaderParamsInterceptor
 import com.wuhenzhizao.mvp.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -64,7 +64,7 @@ object OkHttpClientFactory {
         override fun buildOkHttpClient(context: Context, builder: OkHttpClient.Builder) {
             super.buildOkHttpClient(context, builder)
 
-            builder.addInterceptor(HeaderParamsIntercepter(context))
+            builder.addInterceptor(HeaderParamsInterceptor(context))
         }
     }
 
@@ -73,7 +73,7 @@ object OkHttpClientFactory {
         override fun buildOkHttpClient(context: Context, builder: OkHttpClient.Builder) {
             super.buildOkHttpClient(context, builder)
 
-            builder.addInterceptor(HeaderFileParamsIntercepter(context))
+            builder.addInterceptor(HeaderFileParamsInterceptor(context))
         }
     }
 }

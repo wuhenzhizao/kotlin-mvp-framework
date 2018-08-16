@@ -3,14 +3,13 @@ package com.wuhenzhizao.mvp.net.intercepter
 import android.content.Context
 import android.text.TextUtils
 import android.util.Log
-import com.wuhenzhizao.http.BaseIntercepter
 import okhttp3.Interceptor
 import okhttp3.Response
 
 /**
  * Created by liufei on 2017/10/11.
  */
-internal class HeaderFileParamsIntercepter(context: Context) : BaseIntercepter(context) {
+internal class HeaderFileParamsInterceptor(context: Context) : BaseInterceptor(context) {
 
     override fun intercept(chain: Interceptor.Chain?): Response {
         val builder = chain!!.request().newBuilder()
