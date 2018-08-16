@@ -1,8 +1,8 @@
-package com.wuhenzhizao.http
+package com.wuhenzhizao.mvp.net
 
 import android.content.Context
-import com.wuhenzhizao.http.intercepter.HeaderFileParamsIntercepter
-import com.wuhenzhizao.http.intercepter.HeaderParamsIntercepter
+import com.wuhenzhizao.mvp.net.intercepter.HeaderFileParamsIntercepter
+import com.wuhenzhizao.mvp.net.intercepter.HeaderParamsIntercepter
 import com.wuhenzhizao.mvp.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

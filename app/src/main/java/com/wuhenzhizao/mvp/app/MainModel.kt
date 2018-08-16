@@ -1,6 +1,6 @@
 package com.wuhenzhizao.mvp.app
 
-import com.wuhenzhizao.http.ServiceFactory
+import com.wuhenzhizao.mvp.net.ServiceFactory
 import com.wuhenzhizao.http.BaseResponse
 import com.wuhenzhizao.http.HttpException
 import com.wuhenzhizao.module.Callback

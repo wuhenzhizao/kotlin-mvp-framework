@@ -36,7 +36,7 @@ dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
 
     api rootProject.ext.dependencies["kotlin"]
-    api rootProject.ext.dependencies["kotlin-reflect"]
+    api rootProject.ext.dependencies["kotlin_reflect"]
     api rootProject.ext.dependencies["appcompat"]
     testApi rootProject.ext.dependencies["junit"]
     androidTestApi(rootProject.ext.dependencies["espresso"], {
@@ -57,13 +57,13 @@ dependencies {
     api(rootProject.ext.dependencies["rxbus"]) {
         exclude group: 'com.jakewharton.timber', module: 'timber'
     }
-    api rootProject.ext.dependencies["rxlifecycle-components"]
-    api rootProject.ext.dependencies["rxlifecycle-kotlin"]
-    api rootProject.ext.dependencies["rxlifecycle-android-lifecycle-kotlin"]
+    api rootProject.ext.dependencies["rxlifecycle_components"]
+    api rootProject.ext.dependencies["rxlifecycle_kotlin"]
+    api rootProject.ext.dependencies["rxlifecycle_android_lifecycle_kotlin"]
     api rootProject.ext.dependencies["timber"]
-    debugApi rootProject.ext.dependencies["leakcanary-android"]
-    debugApi rootProject.ext.dependencies["leakcanary-support-fragment"]
-    releaseApi rootProject.ext.dependencies["leakcanary-android-no-op"]
+    debugApi rootProject.ext.dependencies["leakcanary_android"]
+    debugApi rootProject.ext.dependencies["leakcanary_support_fragment"]
+    releaseApi rootProject.ext.dependencies["leakcanary_android_no_op"]
 }
 
 publish {

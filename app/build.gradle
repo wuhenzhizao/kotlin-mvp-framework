@@ -28,16 +28,15 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(":library")
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api project(":library")
 
-    api rootProject.ext.dependencies["appcompat"]
     api 'com.android.support.constraint:constraint-layout:1.1.2'
     testApi rootProject.ext.dependencies["junit"]
     androidTestApi(rootProject.ext.dependencies["espresso"], {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    debugApi rootProject.ext.dependencies["leakcanary-android"]
-    debugApi rootProject.ext.dependencies["leakcanary-support-fragment"]
-    releaseApi rootProject.ext.dependencies["leakcanary-android-no-op"]
+    debugApi rootProject.ext.dependencies["leakcanary_android"]
+    debugApi rootProject.ext.dependencies["leakcanary_support_fragment"]
+    releaseApi rootProject.ext.dependencies["leakcanary_android_no_op"]
 }

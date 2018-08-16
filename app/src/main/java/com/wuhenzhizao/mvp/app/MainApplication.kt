@@ -1,9 +1,10 @@
 package com.wuhenzhizao.mvp.app
 
-import com.wuhenzhizao.http.ServiceFactory
 import com.wuhenzhizao.base.BaseApplication
 import com.wuhenzhizao.image.ImageLoader
 import com.wuhenzhizao.module.ModuleManager
+import com.wuhenzhizao.mvp.net.ServiceFactory
+import okhttp3.Interceptor
 
 class MainApplication : BaseApplication() {
 
@@ -11,7 +12,7 @@ class MainApplication : BaseApplication() {
         super.onCreate()
 
         ModuleManager.register(AppModule::class)
-        ServiceFactory.init(this)
+        ServiceFactory.init(this, "https://www.baidu.com", mutableListOf<Interceptor>())
         ImageLoader.init(ImageLoader.EngineType.Glide, this)
     }
 

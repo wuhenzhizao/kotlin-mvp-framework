@@ -1,4 +1,4 @@
-package com.wuhenzhizao.http.intercepter
+package com.wuhenzhizao.http
 
 import android.content.Context
 import okhttp3.Interceptor

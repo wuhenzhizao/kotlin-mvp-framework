@@ -1,8 +1,9 @@
-package com.wuhenzhizao.http.intercepter
+package com.wuhenzhizao.mvp.net.intercepter
 
 import android.content.Context
 import android.text.TextUtils
 import android.util.Log
+import com.wuhenzhizao.http.BaseIntercepter
 import okhttp3.Interceptor
 import okhttp3.Response
 
