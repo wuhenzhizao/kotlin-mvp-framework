@@ -26,6 +26,10 @@ abstract class BasePresenter<V : IBaseView>(var view: V) : IBasePresenter {
         compositeDisposable.add(disposable)
     }
 
+    fun postDelay(delayMillis: Long, block: () -> Unit) {
+        view.postDelay(delayMillis, block)
+    }
+
     override fun <M : IBaseModel> obtainModel(clazz: KClass<M>): M {
         return ModelManager.getModel(clazz)
     }

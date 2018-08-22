@@ -2,7 +2,6 @@ package com.wuhenzhizao.mvp
 
 import android.app.Activity
 import android.content.Intent
-import android.os.Bundle
 
 interface IBaseView {
 
@@ -26,12 +25,12 @@ interface IBaseView {
     /**
      * 启动Activity
      */
-    fun startActivity(intent:Intent)
+    fun startActivity(intent: Intent)
 
     /**
      * 启动Activity
      */
-    fun startActivityForResult(intent:Intent, requestCode: Int)
+    fun startActivityForResult(intent: Intent, requestCode: Int)
 
     /**
      * 显示键盘
@@ -47,4 +46,9 @@ interface IBaseView {
      * 关闭当前页面
      */
     fun finish()
+
+    /**
+     * 延时
+     */
+    fun postDelay(delayMillis: Long, block: () -> Unit)
 }

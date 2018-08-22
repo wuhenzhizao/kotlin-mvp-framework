@@ -1,8 +1,6 @@
 package com.wuhenzhizao.base
 
 import android.app.Activity
-import android.content.Intent
-import android.os.Bundle
 import android.widget.Toast
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity
 import com.wuhenzhizao.mvp.IBasePresenter
@@ -49,4 +47,7 @@ abstract class BaseActivity : RxAppCompatActivity(), IBaseView {
 
     }
 
+    override fun postDelay(delayMillis: Long, block: () -> Unit) {
+        window.decorView.postDelayed(block, delayMillis)
+    }
 }
