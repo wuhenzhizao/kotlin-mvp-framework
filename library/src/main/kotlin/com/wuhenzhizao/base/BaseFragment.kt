@@ -40,4 +40,8 @@ abstract class BaseFragment : RxFragment(), IBaseView {
     override fun hideSoftInputKeyBoard() {
 
     }
+
+    override fun postDelay(delayMillis: Long, block: () -> Unit) {
+        view.postDelayed(block, delayMillis)
+    }
 }

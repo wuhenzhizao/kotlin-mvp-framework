@@ -70,7 +70,7 @@ publish {
     userOrg = 'wuhenzhizao'
     groupId = 'com.wuhenzhizao'
     artifactId = 'kotlin-mvp-framework'
-    publishVersion = '1.0.0.4'
+    publishVersion = '1.0.0.5'
     desc = 'Android mvp architecture in kotlin'
     website = 'https://github.com/wuhenzhizao/kotlin-mvp-framework'
 }
