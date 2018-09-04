@@ -6,5 +6,5 @@ Android mvp architecture in kotlin
 Install
 =======
 ```groovy
-compile 'com.wuhenzhizao:kotlin-mvp-framework:1.0.0.5'
+compile 'com.wuhenzhizao:kotlin-mvp-framework:1.0.0.7'
 ```

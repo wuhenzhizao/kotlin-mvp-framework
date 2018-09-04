@@ -1,12 +1,12 @@
 package com.wuhenzhizao.base
 
-import android.app.Activity
+import android.content.Context
+import android.support.v4.app.FragmentActivity
 import android.widget.Toast
-import com.trello.rxlifecycle2.components.support.RxAppCompatActivity
 import com.wuhenzhizao.mvp.IBasePresenter
 import com.wuhenzhizao.mvp.IBaseView
 
-abstract class BaseActivity : RxAppCompatActivity(), IBaseView {
+abstract class BaseActivity : FragmentActivity(), IBaseView {
     private val presenterList: MutableList<IBasePresenter> = arrayListOf()
 
     protected fun addPresenter(p: IBasePresenter) {
@@ -23,7 +23,7 @@ abstract class BaseActivity : RxAppCompatActivity(), IBaseView {
         super.onDestroy()
     }
 
-    override fun getActivity(): Activity {
+    override fun getContext(): Context {
         return this
     }
 

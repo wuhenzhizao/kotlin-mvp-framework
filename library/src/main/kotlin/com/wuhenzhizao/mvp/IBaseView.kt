@@ -1,11 +1,11 @@
 package com.wuhenzhizao.mvp
 
-import android.app.Activity
+import android.content.Context
 import android.content.Intent
 
 interface IBaseView {
 
-    fun getActivity(): Activity
+    fun getContext(): Context
 
     /**
      * 显示进度条

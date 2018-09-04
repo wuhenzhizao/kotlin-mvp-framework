@@ -22,7 +22,7 @@ class MainPresenter(view: MainContract.MainView) : MainContract.MainPresenter(vi
         }))
 
         RxBus.get().post("xxx", Pipe.Builder()
-                .from(view.getActivity())
+                .from(view.getContext())
                 .append("name", "wuhenzhizao")
                 .build())
     }
